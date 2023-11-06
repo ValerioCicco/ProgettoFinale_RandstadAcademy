@@ -31,7 +31,7 @@ public class Prodotto {
 	private int qta;
 	
 	@JsonIgnore
-	@ManyToMany(mappedBy = "prodotti")
+	@ManyToMany(mappedBy = "prodotti") //mapped by ha il nome della variabile presente nell'altra tabella
 	List<Ordine> ordini = new ArrayList<>();
 
 	public Prodotto(Long id, String nome, float prezzo, int qta) {

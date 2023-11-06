@@ -31,9 +31,9 @@ public class Ordine {
 	
 	@ManyToMany
 	@JoinTable(
-			name = "prodotti_ordinati",
-			joinColumns = @JoinColumn(name = "id_ordine"),
-			inverseJoinColumns = @JoinColumn(name = "id_prodotto"))
+			name = "prodotti_ordinati", //nome tabella pivot
+			joinColumns = @JoinColumn(name = "id_ordine"), //PK associata a questa tabella
+			inverseJoinColumns = @JoinColumn(name = "id_prodotto")) //PK associata alla tabella prodotto (lo sa perché il tipo della lista è "Prodotto")
 	List<Prodotto> prodotti = new ArrayList<>();
 	
 	public Ordine() {
