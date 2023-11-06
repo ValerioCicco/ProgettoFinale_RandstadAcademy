@@ -1,0 +1,50 @@
+package com.example.progettofinalehibernate.controllers;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.progettofinalehibernate.models.Prodotto;
+import com.example.progettofinalehibernate.services.ProdottoService;
+
+@RestController
+@RequestMapping("/prodotti")
+public class ProdottoController {
+
+	@Autowired
+	private ProdottoService prodottoService;
+	
+	@GetMapping
+	public List<Prodotto> listaProdotti() {
+		return prodottoService.getAllProdotti();
+	}
+	
+	@GetMapping("/{id}")
+	public Optional<Prodotto> getProdottoById(@PathVariable Long id) {
+		return prodottoService.getProdottoById(id);
+	}
+	
+	@PostMapping
+	public Prodotto nuovoProdotto(@RequestBody Prodotto prodotto) {
+		return prodottoService.createProdotto(prodotto);
+	}
+	
+	@PutMapping("/{id}")
+	public Prodotto modificaProdotto(@PathVariable Long id, @RequestBody Prodotto prodotto) {
+		return prodottoService.updateProdotto(id, prodotto);
+	}
+	
+	@DeleteMapping("/{id}")
+	public Prodotto eliminaProdotto(@PathVariable Long id) {
+		return prodottoService.deleteProdotto(id);
+	}
+}

@@ -1,0 +1,5 @@
+package com.example.progettofinalehibernate.controllers;
+
+public class OrdineController {
+
+}

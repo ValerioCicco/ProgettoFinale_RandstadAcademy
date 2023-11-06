@@ -1,0 +1,5 @@
+package com.example.progettofinalehibernate.repositories;
+
+public interface ClienteRepository {
+
+}

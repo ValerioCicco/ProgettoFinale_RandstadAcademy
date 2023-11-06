@@ -1,0 +1,5 @@
+package com.example.progettofinalehibernate.models;
+
+public class Cliente {
+
+}

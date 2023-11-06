@@ -1,0 +1,33 @@
+package com.example.progettofinalehibernate.models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "prodotto")
+public class Prodotto {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "nome", nullable = false)
+	private String nome;
+	
+	@Column(name = "prezzo", nullable = false)
+	private float prezzo;
+	
+	@Column(name = "qta", nullable = false)
+	private int qta;
+	
+	@ManyToMany(mappedBy = "prodotti")
+	List<Ordine> ordini = new ArrayList<>();
+}
