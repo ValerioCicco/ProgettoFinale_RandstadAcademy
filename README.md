@@ -12,7 +12,7 @@ Lista tasks:
 6. Creazione controllers
 7. FASE TESTS (tutti i test funzionano)
 
-Obiettivo: Creare un'applicazione Spring Boot per gestire l'inventario e gli ordini di una ferramenta.
+Obiettivo: Progetto terminato! Ho creato un'applicazione Spring Boot per gestire l'inventario e gli ordini di una ferramenta.
 
 # FOLDER progettofinalejava
 
